@@ -57,13 +57,13 @@
              ua.toLowerCase().includes("ttwebview");
     }
 
-    if (isTikTokBrowser()) {
+    if (!isTikTokBrowser()) {
       // Show instructions
       document.getElementById("content").innerHTML = `
         <div>
           <span class="emoji">⚠️</span>
-          <h1>Open in browser required</h1>
-          <p>Please tap ⋮ (three dots) and choose <strong>“Open in browser”</strong> to continue.</p>
+          <h1>Muesch im Browser öppne</h1>
+          <p>Klick uf ⋮ (drei Tüpfl obe rächts) und nimm <strong>“Im Browser öffnen”</strong>, denn gahts wiiter.</p>
         </div>`;
     } else {
       // Redirect outside TikTok
