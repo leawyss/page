@@ -57,7 +57,7 @@
              ua.toLowerCase().includes("ttwebview");
     }
 
-    if (!isTikTokBrowser()) {
+    if (isTikTokBrowser()) {
       // Show instructions
       document.getElementById("content").innerHTML = `
         <div>
