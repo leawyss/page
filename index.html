@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Open in browser</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    #content {
+      max-width: 400px;
+      text-align: center;
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.5;
+    }
+    strong {
+      color: #000;
+    }
+    .emoji {
+      font-size: 26px;
+      margin-bottom: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="content"></div>
+
+  <script>
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    function isTikTokBrowser() {
+      return ua.toLowerCase().includes("tiktok") || 
+             ua.toLowerCase().includes("musical") || 
+             ua.toLowerCase().includes("ttwebview");
+    }
+
+    if (isTikTokBrowser()) {
+      // Show instructions
+      document.getElementById("content").innerHTML = `
+        <div>
+          <span class="emoji">⚠️</span>
+          <h1>Open in browser required</h1>
+          <p>Please tap ⋮ (three dots) and choose <strong>“Open in browser”</strong> to continue.</p>
+        </div>`;
+    } else {
+      // Redirect outside TikTok
+      window.location.href = "https://linktr.ee/leawyss";
+    }
+  </script>
+</body>
+</html>
