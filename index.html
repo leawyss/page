@@ -18,30 +18,16 @@
       max-width: 500px;
       text-align: center;
       background: #fff;
-      padding: 50px 30px;
+      padding: 20px;
       border-radius: 20px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: #111;
-      font-weight: bold;
-    }
-    p {
-      font-size: 22px;
-      color: #333;
-      line-height: 1.6;
-      font-weight: 500;
-    }
-    strong {
-      color: #000;
-      font-weight: 700;
-    }
-    .emoji {
-      font-size: 42px;
-      margin-bottom: 20px;
+    img {
+      max-width: 100%;
+      height: auto;
       display: block;
+      margin: 0 auto;
+      border-radius: 12px;
     }
   </style>
 </head>
@@ -57,16 +43,19 @@
              ua.toLowerCase().includes("ttwebview");
     }
 
-    if (isTikTokBrowser()) {
-      // Show instructions
+    if (!isTikTokBrowser()) {
       document.getElementById("content").innerHTML = `
-        <div>
-          <span class="emoji">⚠️</span>
-          <h1>Muesch im Browser öppne</h1>
-          <p>Klick uf ⋮ (drei Tüpfl obe rächts) und nimm <strong>“Im Browser öffnen”</strong>, denn gahts wiiter.</p>
-        </div>`;
+        <img src="browser-image.jpeg" alt="Open in browser instructions">
+      `;
+
+      // Show instructions as text
+      // document.getElementById("content").innerHTML = `
+      //   <div>
+      //     <span class="emoji">⚠️</span>
+      //     <h1>Muesch im Browser öppne</h1>
+      //     <p>Klick uf ⋮ (drei Tüpfl obe rächts) und nimm <strong>“Im Browser öffnen”</strong>, denn gahts wiiter.</p>
+      //   </div>`;
     } else {
-      // Redirect outside TikTok
       window.location.href = "https://linktr.ee/leawyss";
     }
   </script>
