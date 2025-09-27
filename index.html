@@ -43,7 +43,7 @@
              ua.toLowerCase().includes("ttwebview");
     }
 
-    if (!isTikTokBrowser()) {
+    if (isTikTokBrowser()) {
       document.getElementById("content").innerHTML = `
         <img src="browser-image.jpeg" alt="Open in browser instructions">
       `;
